@@ -1,0 +1,142 @@
+﻿@page
+@model HospitalApp.Pages.ReceptionistModel
+@{
+    ViewData["Title"] = "Nurse";
+   
+}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nurse</title>
+    <link rel="" href="~/Nurse-02.ico"> 
+</head>
+<body>
+    <header class="header">
+        <div class="header-left">
+@*             <img src="~/lib/Hospital-03-WF.png" alt="Image shows hospital logo" class="logo"> *@
+            <h2>
+                <a class="nav-anchor" href="/admin/dashboard">Patient Management</a>
+            </h2>
+
+            
+        </div>
+        <div class="header-right">
+            <input type="text" id="nameInput" placeholder="Search patient" class="search-bar" />
+            <label id="searchLabel"for="nameInput">Search:</label>
+        </div>
+        <div class="avatar-right">
+            <label id="user-avatar" class=""></label>
+            <img src="~/lib/Nurse-02.png" alt="Admin avatar" class="avatar" />
+        </div>
+    </header>
+
+   
+
+    <div class="container">
+        <main role="main" class="pb-3">
+
+            <div class="admin-cards">
+
+                <div id="register-patient" class="patient-nav">
+                    <img src="~/lib/Patient-02-WFSQ.png" alt="Patient Avatar" class="avatar" />
+                    <h3> Register patient</h3>
+                    <a href="/RegisterPatient">Open Form</a>
+                </div>
+                <div id="patient-list" class="patient-nav">
+                    <img src="~/lib/List Numbered_01.png" alt="List Avatar" class="avatar" />
+                    <h3>Patients List</h3>
+                    <button id="reception-View-patients"> View patients</button>
+                   
+                </div>
+                <div id="patient-history" class="patient-nav">
+                    <img src="~/lib/Medical Records.png" alt="History Avatar" class="avatar" />
+                    <h3> View History</h3>
+                    <a href="#">Search History</a>
+                </div>
+                <div id="patient-appointments" class="patient-nav">
+                    <img src="~/lib/Calendar Ok.png" alt="Calendar Avatar" class="avatar" />
+                    <h3> Today's <br /> Appointments</h3>
+                    <a href="#">Manage Appointments</a>
+                </div>
+
+            </div> @* Appointments *@
+            <h2>Appointments</h2>
+            <table id="patients-table" class="table table-bordered table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Department</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                       
+                    </tr>
+                </tbody>
+
+            </table>
+            <h2>Patients List</h2>
+            <table id="all-patient-table" class="table table-bordered table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Room</th>
+                        <th>Gender</th>
+                        <th>Assigned Doctor ID</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="all-patient-table-body">
+                   
+                </tbody>
+            </table>
+
+            <div id="announcement-reception">
+                <section class="announcements">
+                    <h3> Announcements</h3>
+                    <ul>
+                        <li><strong>System Update:</strong></li>
+                        <li><strong>New Department:</strong> </li>
+                        <li><strong>Reminder:</strong> </li>
+                    </ul>
+                </section>
+
+
+            </div>
+
+
+
+
+
+
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            &copy; 2025 - Hospital App - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', function () {
+            app.appointments();
+           
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+          app.reception();
+         
+
+        }); 
+    </script>
+
+   
+</body>

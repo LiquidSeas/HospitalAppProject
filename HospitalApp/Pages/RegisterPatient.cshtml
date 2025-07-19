@@ -1,0 +1,82 @@
+﻿
+					@page
+@model HospitalApp.Pages.RegisterPatientModel
+@{
+}
+<body>
+	<header>
+	</header>
+
+	<main class="container mt-5">
+		<h2 class="mb-4">Register Patient</h2>
+
+		<form id="register-patient-form" method="post">
+			<div class="mb-3">
+				<label for="name" class="form-label">Full Name</label>
+				<input type="text" id="name" name="name" class="form-control" placeholder="Enter patient's full name" required />
+			</div>
+
+			<div class="mb-3">
+				<label for="phone" class="form-label">Phone</label>
+				<input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter phone number" required />
+			</div>
+
+			<div class="mb-3">
+				<label for="email" class="form-label">Email</label>
+				<input type="email" id="email" name="email" class="form-control" placeholder="Enter email address" />
+			</div>
+
+			<div class="mb-3">
+				<label for="room" class="form-label">Room</label>
+				<input type="text" id="room" name="room" class="form-control" placeholder="Room number" required />
+			</div>
+
+			<div class="mb-3">
+				<label for="gender" class="form-label">Gender</label>
+				<select id="gender" name="gender" class="form-select" required>
+					<option value="">-- Select Gender --</option>
+					<option value="Male">Male</option>
+					<option value="Female">Female</option>
+				</select>
+			</div>
+
+			<div class="mb-3">
+				<label for="doctorId" class="form-label">Assign Doctor</label>
+				<select id="doctorId" name="drId" class="form-select" required>
+					<option value="">-- Select Doctor ID --</option>
+					@for (int i = 1; i <= 7; i++)
+					{
+						<option value="@i">@i</option>
+					}
+				</select>
+			</div>
+
+			<div class="mb-3">
+				<label for="status" class="form-label">Patient Status</label>
+				<select id="admissionstatus" name="status" class="form-select" required>
+					<option value="">-- Select Status --</option>
+					<option value="Admitted">Admitted</option>
+					<option value="Physical Therapy">Physical Therapy</option>
+					<option value="Theatre">Theatre</option>
+					<option value="Surgery">Surgery</option>
+					<option value="Consultation">Consultation</option>
+					<option value="Maternity">Maternity</option>
+				</select>
+			</div>
+
+			<button type="submit" class="btn btn-primary">Register Patient</button>
+		</form>
+	</main>
+
+	@* <footer class="text-center mt-5">
+		&copy; Hospital App 2025
+	</footer> *@
+	 <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+       
+	   document.addEventListener('DOMContentLoaded', function () {
+            app.registerPatient();
+        });
+
+    </script>
+</body>

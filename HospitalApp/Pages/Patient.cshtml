@@ -1,0 +1,67 @@
+﻿               
+  @page
+@model HospitalApp.Pages.PatientModel
+@{
+}
+<body>
+    <header>
+        
+    </header>
+
+    <main class="container mt-5">
+        <h2 class="mb-4">Book an Appointment</h2>
+
+        <form id="patient-form" method="post">
+            <div class="mb-3">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" id="name" name="Name" class="form-control" placeholder="Enter full name" required />
+            </div>
+
+            <div class="mb-3">
+                <label for="date" class="form-label">Preferred Appointment Date</label>
+                <input type="date" id="date" name="AppointmentDate" class="form-control" required />
+            </div>
+
+            <div class="mb-3">
+                <label for="speciality" class="form-label">Speciality</label>
+                <select id="speciality" name="Speciality" class="form-select" required>
+                    <option value="">-- Select Speciality --</option>
+                    <option value="Dental">Dental</option>
+                    <option value="Optical">Optical</option>
+                    <option value="Cardiology">Cardiology</option>
+                    <option value="Pediatrics">Pediatrics</option>
+                    <option value="Dermatology">Dermatology</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="booking" class="form-label">Appointment Action</label>
+                <select id="booking" name="booking" class="form-select" required title="Choose booking action">
+                    <option value="Schedule">Book</option>
+                    <option value="Delete">Delete</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="Enter email address" required />
+            </div>
+
+            <button id="patient-submit-button" type="submit" class="btn btn-primary">Book Appointment</button>
+        </form>
+    </main>
+
+    <footer class="text-center mt-5">
+        &copy; Hospital App 2025
+    </footer>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+       
+            
+        document.addEventListener('DOMContentLoaded', function () {
+            app.appointment();
+        });
+       
+    </script>
+</body>

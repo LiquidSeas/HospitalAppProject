@@ -1,0 +1,144 @@
+﻿@page
+@model HospitalApp.Pages.DoctorModel
+@{
+}
+
+<body>
+    <header class="doctor-header">
+        <nav>
+            <img src="~/lib/doctor.png" alt="Doctor's Avatar'" class="avatar" />
+            <label id="doctors-name">DR. ......</label>
+        </nav>
+
+    </header>
+    <main>
+        <div class="doctors-cards">
+            <div class="appointment-info">
+                <img src="~/lib/Appointment-WFf.png" alt="Calendar-avatar">
+                <h2>Appointments</h2>
+                <a href="~/lib/Appointment-WFf.png">See Schedule</a>
+            </div>
+            <table id="appointment-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Department</th>
+                        <th>Visit Time</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            
+        </div>
+        <div class="button-container">
+            <button id="refresh-appointment-table" type="button" class="btn btn-primary">Refresh Appointments</button>
+        </div>
+
+
+        <div id="assigned-patient-card">
+            <div class="assigned-info">
+                <img src="~/lib/Patient-02-WFSQ.png" alt="Patient-avatar">
+
+                <h2>Assigned Patients</h2>
+                <a href="#">See Patients</a>
+            </div>
+
+            <table id="assigned-patient-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Room</th>
+                        <th>Gender</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>101</td>
+                        <td>Jane Doe</td>
+                        <td>12A</td>
+                        <td>Under Treatment</td>
+                    </tr>
+                    <tr>
+                        <td>102</td>
+                        <td>John Smith</td>
+                        <td>15B</td>
+                        <td>Discharged</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
+        <div class="button-container">
+            <button id="refresh-assigned-table" type="button" class="btn btn-primary">Refresh Patients</button>
+        </div>
+
+        <div id="medical-notes-card">
+            <div class="notes-info">
+                <img src="~/lib/Letterpad-04.png" alt="Notepad-avatar">
+                <h2>Patient's Notes</h2>
+                <a href="#">Record Notes</a>
+            </div>
+
+            <table id="medical-notes-table" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Patient</th>
+                        <th>Ailment</th>
+                        <th>Temperature</th>
+                        <th>BMI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jane Doe</td>
+                        <td>Flu</td>
+                        <td>38.2°C</td>
+                        <td>22.5</td>
+                    </tr>
+                    <tr>
+                        <td>John Smith</td>
+                        <td>Diabetes</td>
+                        <td>36.9°C</td>
+                        <td>28.3</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+
+        </div>
+        <div class="button-container">
+            <button id="add-patient-notes" type="button" class="btn btn-primary">Add Notes</button>
+            <button id="refresh-notes" type="button" class="btn btn-secondary">Refresh Notes</button>
+            </div>
+       
+
+
+
+
+        <section class="announcements">
+            <h3> Announcements</h3>
+
+            <ul id="announcement-list-items">
+            </ul>
+        </section>
+
+
+    </main>
+    <footer>
+    </footer>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        app.appointments();
+
+
+    </script>
+</body>
+
+</html>
